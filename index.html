@@ -1,0 +1,46 @@
+<!-- A very simple Vue.js application that uses a CDN (URL specified in script tag)
+To check the result, just right click and select 'Open with Five Server' => Renders the web page in browser -->
+
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+             
+        </script>
+        <title>
+            Vue Test 
+
+        </title>
+    </head>    
+    <body>
+        <div id ="app"> 
+            <h1>
+                {{message}}  
+            </h1> 
+            <button @click="clickMe" id="b1"> Click Me</button>
+            <button @click="clickMe2" id="b1"> Click Me2</button>
+        </div>  
+    <script>
+        const app = Vue.createApp({
+             data(){
+                return { message: 'Hello from Vue!' ,}
+             },
+             data1(){
+                return {msg: 'Second message',}
+             },
+             methods:{
+                clickMe(){
+                    console.log('Button Clicked');
+                    this.message = 'Updated message';                    
+                },
+                clickMe2(){
+                    console.log('Button 2 Clicked');
+                    this.message = 'Updated msg2';                    
+                }
+             }
+        });
+
+        app.mount('#app')
+
+    </script>
+    </body>
+</html>
